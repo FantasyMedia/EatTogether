@@ -1,0 +1,11 @@
+{
+  "name": "EatTogether",
+  "version": "0.0.0",
+  "author": [
+    "FantasyShao<fantasyshao@icloud.com>"
+  ],
+  "repository": "git@github.com:FantasyMedia/EatTogether.git",
+  "dependencies": {
+    "express": "~4.10.4"
+  }
+}
