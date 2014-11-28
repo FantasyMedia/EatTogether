@@ -1,0 +1,14 @@
+// error.jade
+//
+// @description
+// @author Fantasy <fantasyshao@icloud.com>
+// @created 2014-11-28
+// @update 2014-11-28
+//
+
+extends layout
+
+block content
+  h1= message
+  h2= error.status
+  pre #{error.stack}
