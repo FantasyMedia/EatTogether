@@ -14,6 +14,7 @@ var express = require('express');
 var session = require('express-session');
 
 var routes = require('./routes');
+require('./models');
 
 var app = express();
 
