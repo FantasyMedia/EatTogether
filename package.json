@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "start": "node app.js",
-    "watch": "supervisor app.js"
+    "restart": "supervisor app.js"
   },
   "repository": "git@github.com:FantasyMedia/EatTogether.git",
   "dependencies": {

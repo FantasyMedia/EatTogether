@@ -16,7 +16,7 @@ var cookieParser = require('cookie-parser');
 
 var config = require('./config');
 var routes = require('./routes');
-require('./models');
+//require('./models');
 
 var app = express();
 
@@ -26,7 +26,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cookieParser());
 app.use(session({
-  secret: config.session_secret
+  secret: config.session_secret,
+  resave: true,
+  saveUninitialized: true
 }));
 
 routes(app);
