@@ -12,7 +12,9 @@
 var path = require('path');
 var express = require('express');
 var session = require('express-session');
+var cookieParser = require('cookie-parser');
 
+var config = require('./config');
 var routes = require('./routes');
 require('./models');
 
@@ -20,8 +22,12 @@ var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cookieParser());
+app.use(session({
+  secret: config.session_secret
+}));
 
 routes(app);
 
