@@ -20,6 +20,9 @@ gulp.task('default', ['build']);
 gulp.task('build', function () {
   gulp.src(paths.manage)
     .pipe(sass({ noCache: true, 'sourcemap=none': true }))
+    .on('error', function (err) {
+      console.error(err);
+    })
     .pipe(gulp.dest('css'));
 });
 

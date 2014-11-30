@@ -5,8 +5,7 @@
     "FantasyShao<fantasyshao@icloud.com>"
   ],
   "scripts": {
-    "start": "node app.js",
-    "restart": "supervisor app.js"
+    "start": "supervisor app.js"
   },
   "repository": "git@github.com:FantasyMedia/EatTogether.git",
   "dependencies": {
