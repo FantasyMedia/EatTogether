@@ -4,18 +4,62 @@ html
     title= title
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/manage.css')
     script(src='/js/jquery.min.js')
     script(src='/js/bootstrap.min.js')
   body
     // Navbar
-    header.navbar.navbar-static-top.navbar-default(role='navigation')
-      div.container
+    header.navbar.navbar-fixed-top.navbar-inverse(role='navigation')
+      div.container-fluid
         div.navbar-header
-          a.navbar-brand(href='/manage') Eat Together 管理后台
+          a.navbar-brand(href='/manage') Eat Together Dashboard
         ul.nav.navbar-nav.navbar-right
           li
             a(href='#') 用户名
           li
             a(href='/logout') 登出
+
+    div.container-fluid
+      div.row
+        div.col-sm-3.col-md-2.sidebar
+          ul.nav.nav-sidebar
+            li.active
+              a(href='#overview') 概览
+            li
+              a(href='#addShop') 添加店铺
+            li
+              a(href='#addFood') 添加外卖
+            li
+              a(href='#all') 全部外卖
+        div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          h1.page-header Dashboard
+          h2.sub-header#overview 概览
+
+
+          h2.sub-header#addShop 添加店铺
+          form.form-inline(role='form')
+            input.form-control(placeholder='名称', type='text')
+            input.form-control(placeholder='电话', type='tel')
+            button.btn.btn-primary 添加
+
+          h2.sub-header#addFood 添加外卖
+          form.form-inline(role='form')
+            input.form-control(placeholder='名称', type='text')
+            select.form-control
+              option 俺们村
+              option 小食记
+            input.form-control(placeholder='价格', type='num')
+            button.btn.btn-primary 添加
+
+          h2.sub-header#all 全部外卖
+          div.table-responsive
+            table.table.table-striped
+              thead
+                tr
+                  th #
+                  th 名称
+                  th 店铺
+                  th 价格
+              tbody
 
     block content
