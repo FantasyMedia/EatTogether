@@ -9,9 +9,13 @@
  */
 
 var site = require('./controllers/site');
+var manage = require('./controllers/manage');
 
 module.exports = function (app) {
 
   app.get('/', site.index);
+
+  // Manage pages
+  app.get('/manage', manage.index);
 
 };
