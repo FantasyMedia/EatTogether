@@ -5,8 +5,6 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/manage.css')
-    script(src='/js/jquery.min.js')
-    script(src='/js/bootstrap.min.js')
   body
     // Navbar
     header.navbar.navbar-fixed-top.navbar-inverse(role='navigation')
@@ -15,7 +13,7 @@ html
           a.navbar-brand(href='/manage') Eat Together Dashboard
         ul.nav.navbar-nav.navbar-right
           li
-            a(href='#') 用户名
+            a(href='#') 返回首页
           li
             a(href='/logout') 登出
 
@@ -34,7 +32,6 @@ html
         div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
           h1.page-header Dashboard
           h2.sub-header#overview 概览
-
 
           h2.sub-header#addShop 添加店铺
           form.form-inline(role='form')
@@ -63,3 +60,7 @@ html
               tbody
 
     block content
+
+    script(src='/js/jquery.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/manage.js')

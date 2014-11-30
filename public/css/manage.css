@@ -18,8 +18,8 @@
 
 .nav-sidebar {
   margin: 0 -20px; }
-  .nav-sidebar .active a, .nav-sidebar .active a:hover, .nav-sidebar .active a:active {
-    padding: 10px 20px;
+  .nav-sidebar .active a, .nav-sidebar .active a:hover, .nav-sidebar .active a:active, .nav-sidebar .active a:focus {
+    padding: 10px 15px;
     color: white;
     background-color: #4c8bca; }
 
