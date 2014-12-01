@@ -16,7 +16,7 @@ var cookieParser = require('cookie-parser');
 
 var config = require('./config');
 var routes = require('./routes');
-//require('./models');
+require('./models');
 
 var app = express();
 
