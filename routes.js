@@ -13,9 +13,23 @@ var manage = require('./controllers/manage');
 
 module.exports = function (app) {
 
+  app.use(function(req, res, next) {
+    res.set({
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    });
+
+    next();
+  });
+
   app.get('/', site.index);
 
   // Manage pages
   app.get('/manage', manage.index);
 
+  // Shop
+  app.get('/addShop', manage.addShop);
+
+  // Food
+  //
 };
