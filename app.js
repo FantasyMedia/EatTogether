@@ -22,7 +22,6 @@ var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cookieParser());
 app.use(session({
@@ -32,6 +31,8 @@ app.use(session({
 }));
 
 routes(app);
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
