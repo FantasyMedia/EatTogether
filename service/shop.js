@@ -11,6 +11,18 @@
 var models = require('../models');
 var Shop = models.Shop;
 
+exports.getAllShop = function (callback) {
+
+  Shop.find(function (err, shops) {
+    if (err) return callback(err);
+
+    if (shops.length === 0) return callback(null, []);
+
+    callback(null, shops);
+  });
+
+};
+
 exports.newAndSave = function (name, address, tel, shop_id, callback) {
 
   var shop = new Shop();

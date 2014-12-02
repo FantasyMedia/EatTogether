@@ -10,3 +10,4 @@
 
 exports.User = require('./user');
 exports.Shop = require('./shop');
+exports.Food = require('./food');
