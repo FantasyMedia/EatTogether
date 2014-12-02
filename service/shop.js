@@ -23,14 +23,13 @@ exports.getAllShop = function (callback) {
 
 };
 
-exports.newAndSave = function (name, address, tel, shop_id, callback) {
+exports.newAndSave = function (name, address, tel, callback) {
 
   var shop = new Shop();
 
   shop.name = name;
-  shop.adderss = addres;
+  shop.adderss = address;
   shop.tel = tel;
-  shop.shop_id = shop_id;
 
   shop.save(callback);
 

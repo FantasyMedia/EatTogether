@@ -15,8 +15,7 @@ var ObjectId = Schema.ObjectId;
 var ShopSchema = new Schema({
   name: { type: String },
   address: { type: String },
-  tel: { type: Number },
-  shop_id: { type: ObjectId }
+  tel: { type: Number }
 });
 
 mongoose.model('Shop', ShopSchema);

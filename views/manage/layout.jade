@@ -35,9 +35,10 @@ html
 
           h2.sub-header#addShop 添加店铺
           form.form-inline(role='form')
-            input.form-control(placeholder='名称', type='text')
-            input.form-control(placeholder='电话', type='tel')
-            button.btn.btn-primary 添加
+            input.form-control#shopName(placeholder='名称', type='text')
+            input.form-control#shopTel(placeholder='电话', type='tel')
+            input.form-control#shopAddress(placeholder='地址', type='text')
+            button.btn.btn-primary#doAddShop 添加
 
           h2.sub-header#addFood 添加外卖
           form.form-inline(role='form')
@@ -46,7 +47,7 @@ html
               option 俺们村
               option 小食记
             input.form-control(placeholder='价格', type='num')
-            button.btn.btn-primary 添加
+            button.btn.btn-primary#doAddFood 添加
 
           h2.sub-header#all 全部外卖
           div.table-responsive
