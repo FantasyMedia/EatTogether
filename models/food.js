@@ -10,11 +10,13 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
 
 var FoodSchema = new Schema({
   name: { type: String },
   pic: { type: String },
-  price: { type: Number }
+  price: { type: Number },
+  shop_id: { type: ObjectId }
 });
 
 mongoose.model('Food', FoodSchema);

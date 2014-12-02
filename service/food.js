@@ -24,13 +24,14 @@ exports.getAllFood = function (callback) {
 
 };
 
-exports.newAndSave = function (name, pic, price, callback) {
+exports.newAndSave = function (name, pic, price, shop_id, callback) {
 
     var food = new Food();
 
     food.name = name;
     food.pic = pic;
     food.price = price;
+    food.shop_id = shop_id;
 
     food.save(callback);
 
