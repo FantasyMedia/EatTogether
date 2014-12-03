@@ -18,20 +18,31 @@ exports.index = function (req, res, next) {
   var shopList = [];
   var foodList = [];
 
-  // Get shop and food list
-  //async.parallel([
-  //
-  //], function () {
-  //
-  //});
-
-  res.render('manage/index', { title: '管理后台' });
+  async.parallel([
+    function (callback) {
+      Shop.getAllShop(function (err, shops) {
+        shopList = shops;
+        callback(null, shopList);
+      });
+    },
+    function (callback) {
+      Food.getAllFood(function (err, foods) {
+        foodList = foods;
+        callback(null, foodList);
+      });
+    }
+  ], function (err, results) {
+    console.log(results);
+    res.render('manage/index', {
+      title: '管理后台',
+      shops: results[0],
+      foods: results[1]
+    });
+  });
 
 };
 
 exports.addShop = function (req, res, next) {
-
-  console.log(req.query);
 
   var name = req.query.name;
   var address = req.query.address;
@@ -42,5 +53,9 @@ exports.addShop = function (req, res, next) {
       'success': true
     });
   });
+
+};
+
+exports.addFood = function (req, res, next) {
 
 };

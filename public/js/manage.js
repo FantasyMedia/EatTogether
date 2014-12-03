@@ -39,7 +39,7 @@ $.extend(Manage.prototype, {
         },
         success: function (res) {
           if (res.success === true) {
-           console.log('Add shop success');
+            alert('添加成功!');
           }
         }
       });
@@ -48,8 +48,9 @@ $.extend(Manage.prototype, {
     });
 
     // Add food
-    $('#doAddFood').on('click', function () {
-
+    $('#doAddFood').on('click', function (e) {
+      e.stopPropagation();
+      
     });
 
   }

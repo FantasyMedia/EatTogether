@@ -28,7 +28,9 @@ html
             li
               a(href='#addFood') 添加外卖
             li
-              a(href='#all') 全部外卖
+              a(href='#allShop') 全部店铺
+            li
+              a(href='#allFood') 全部外卖
         div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
           h1.page-header Dashboard
           h2.sub-header#overview 概览
@@ -49,7 +51,24 @@ html
             input.form-control(placeholder='价格', type='num')
             button.btn.btn-primary#doAddFood 添加
 
-          h2.sub-header#all 全部外卖
+          h2.sub-header#allShop 全部店铺
+          div.table-responsive
+            table.table.table-striped
+              thead
+                tr
+                  th #
+                  th 名称
+                  th 电话
+                  th 地址
+              tbody
+                each shop in shops
+                  tr
+                    td
+                    td=shop.name
+                    td=shop.tel
+                    td=shop.address
+
+          h2.sub-header#allFood 全部外卖
           div.table-responsive
             table.table.table-striped
               thead

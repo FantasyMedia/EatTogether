@@ -16,7 +16,7 @@ exports.getAllShop = function (callback) {
   Shop.find(function (err, shops) {
     if (err) return callback(err);
 
-    if (shops.length === 0) return callback(null, []);
+    if (shops.length === 0) return callback(null, shops);
 
     callback(null, shops);
   });
@@ -28,7 +28,7 @@ exports.newAndSave = function (name, address, tel, callback) {
   var shop = new Shop();
 
   shop.name = name;
-  shop.adderss = address;
+  shop.address = address;
   shop.tel = tel;
 
   shop.save(callback);
