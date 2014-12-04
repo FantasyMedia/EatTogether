@@ -13,26 +13,25 @@ var Food = models.Food;
 
 exports.getAllFood = function (callback) {
 
-    Food.find(function (err, foods) {
-        if (err) return callback(err);
+  Food.find(function (err, foods) {
+    if (err) return callback(err);
 
-        if (foods.length === 0) return callback(null, []);
+    if (foods.length === 0) return callback(null, []);
 
-        callback(null, foods);
-
-    });
+    callback(null, foods);
+  });
 
 };
 
 exports.newAndSave = function (name, pic, price, shop_id, callback) {
 
-    var food = new Food();
+  var food = new Food();
 
-    food.name = name;
-    food.pic = pic;
-    food.price = price;
-    food.shop_id = shop_id;
+  food.name = name;
+  food.pic = pic;
+  food.price = price;
+  food.shop_id = shop_id;
 
-    food.save(callback);
+  food.save(callback);
 
 };
